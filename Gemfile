@@ -63,3 +63,6 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
+
+# added responders for devise to work with turbo drive
+gem "responders"
