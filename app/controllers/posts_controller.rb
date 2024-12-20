@@ -10,9 +10,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_member.posts.new(post_params)
       if @post.save
-        redirect_to index
+        redirect_to posts_path
       else
         render :new, status: :unprocessable_entity
       end
