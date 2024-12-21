@@ -4,9 +4,9 @@
 
 <%= form_with model: @post do |form| %>
     <%= form.label "Title" %><br>
-    <%= form.text_field :title, value: 'Your Post Title Here' %><br>
+    <%= form.text_field :title, placeholder: 'Your Post Title Here' %><br>
     <%= form.label "Post Body:" %><br>
-    <%= form.textarea :body, size: "70x5", value: 'Write your post here' %><br>
+    <%= form.textarea :body, size: "70x5", placeholder: 'Write your post here' %><br>
     <%= form.label "Image URL" %>
     <%= form.text_field :image_url %><br>
     <%= form.submit value:"Submit" %>
