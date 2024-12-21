@@ -4,6 +4,11 @@
         <% @posts.each do |post| %>
             <div id="title">
                 <h3><%= post.title %><br></h3>
+                <% if post.image_url.present?%>
+                    <div id=image> 
+                        <img src='<%= post.image_url %>'  width="400"> 
+                    </div>
+                    <% end %>
                 <p id="body">
                     <%= post.body %><br>
                 </p>
