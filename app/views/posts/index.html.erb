@@ -16,7 +16,7 @@
                 <% author = Member.find(post.member_id) %>
                     <div>
                         <% if author.profile_pic.present?%>
-                            <img src=' <%= author.profile_pic %>' width='30'>
+                            <img src=' <%= author.profile_pic %>' width='100'>
                         <% end %>
                         Written by <%= author.name %>
                     </div>
