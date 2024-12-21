@@ -1,3 +1,13 @@
-<H1>
-    Welcome to the Anonymous Writers Club!
-</H1>
+<H1>Welcome to the Anonymous Writers Club!</H1>
+
+    <div id="posts">
+        <% @posts.each do |post| %>
+            <div id="title">
+                <h3><%= post.title %><br></h3>
+                <p id="body">
+                    <%= post.body %><br>
+                </p>
+            </div>
+        <% end %>
+    </div>
+
