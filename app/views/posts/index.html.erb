@@ -13,13 +13,25 @@
                     <%= post.body %><br>
                 </p>
                 <% if member_signed_in? %>
-                    Written by <%= Member.find(post.member_id) %>
-                   <% else %>
-                    <p>
+                <% author = Member.find(post.member_id) %>
+                    <div>
+                        <% if author.profile_pic.present?%>
+                            <img src=' <%= author.profile_pic %>' width='30'>
+                        <% end %>
+                        Written by <%= author.name %>
+                    </div>
+                <% else %>
+                    <div>
                         Written by Anoynmous
-                    </p>
+                    </div>
                 <% end %>
-
+            </div>
+        <% end %>
+    </div>
+    <div>
+        <% if member_signed_in? %>
+            <div>
+                <%= button_to "Sign Out", destroy_member_session_path, method: :delete  %>
             </div>
         <% end %>
     </div>
