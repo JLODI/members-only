@@ -12,6 +12,14 @@
                 <p id="body">
                     <%= post.body %><br>
                 </p>
+                <% if member_signed_in? %>
+                    Written by <%= Member.find(post.member_id) %>
+                   <% else %>
+                    <p>
+                        Written by Anoynmous
+                    </p>
+                <% end %>
+
             </div>
         <% end %>
     </div>
