@@ -13,8 +13,10 @@ class PostsController < ApplicationController
   def create
     @post = current_member.posts.new(post_params)
       if @post.save
+        flash[:notice] = "Your Post has been submitted!"
         redirect_to posts_path
       else
+        flash.now[:error] = @post.errors.full_messages.join ('<br/>')
         render :new, status: :unprocessable_entity
       end
   end
